@@ -9,6 +9,8 @@
         #container{
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
+            gap: 2vh;
             justify-content: space-evenly;
             max-height: 100vh;
         }
@@ -55,4 +57,20 @@
             flex-direction: column;
             justify-content: space-between;
 
+        }
+        @media (max-width: 768px) {
+            .boxes {
+                flex: 1 1 45%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .boxes {
+                flex: 1 1 100%;
+            }
+        }
+        #toAddNew{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
         }
