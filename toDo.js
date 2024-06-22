@@ -29,7 +29,8 @@ function addNewTasks(newTask){
     let pendingTaskNew = document.createElement("div");
     pendingTaskNew.classList.add('tasks');
 
-    let taskForm = document.createElement("form");
+
+    // let taskForm = document.createElement("form");
     let checkbox = document.createElement("input");
     let minusButton = document.createElement("button");
     minusButton.innerHTML = '<i class="fa-solid fa-circle-minus"></i>';
@@ -38,10 +39,10 @@ function addNewTasks(newTask){
 
     let taskSpan = document.createElement("span");
 
-    taskForm.appendChild(checkbox);
-    taskForm.appendChild(taskSpan);
-    taskForm.appendChild(minusButton);
-    pendingTaskNew.appendChild(taskForm);
+    pendingTaskNew.appendChild(checkbox);
+    pendingTaskNew.appendChild(taskSpan);
+    pendingTaskNew.appendChild(minusButton);
+    // pendingTaskNew.appendChild(taskForm);
     taskSpan.textContent = newTask;
 
     document.getElementById("pendingTasks").appendChild(pendingTaskNew);
@@ -78,7 +79,7 @@ function taskCompleted(){
     checkboxes.forEach(cb => {
         if(cb.checked){
             completedTask = cb.parentElement.querySelector('span').textContent;
-            cb.parentElement.parentElement.remove();
+            cb.parentElement.remove();
             achievedTasks(completedTask);
         }
 
@@ -89,6 +90,8 @@ function achievedTasks(checkedTasks){
     let bossDiv = document.getElementById("completedTasksHtml");
     let completedTasksForm = document.createElement("div");
     let finishedtasks = document.createElement("span");
+
+    completedTasksForm.classList.add('completeTasks');
 
     bossDiv.appendChild(completedTasksForm);
     completedTasksForm.appendChild(finishedtasks);
